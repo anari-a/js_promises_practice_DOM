@@ -45,7 +45,9 @@ const secondPromise = new Promise((resolve) => {
   document.addEventListener('mousedown', onDown);
 });
 
-secondPromise.then((message) => showNotification('success', message));
+secondPromise
+  .then((message) => showNotification('success', message))
+  .catch((message) => showNotification('error', message));
 
 const thirdPromise = new Promise((resolve) => {
   // eslint-disable-next-line prefer-const
